@@ -1,0 +1,26 @@
+template(name="minicard")
+  .minicard
+    if cover
+      .minicard-cover
+        img(src=cover.url)
+    if labels
+      .minicard-labels
+        each labels
+          .minicard-label(class="card-label-{{color}}" title="{{name}}")
+    .minicard-title= title
+    if members
+      .minicard-members.js-minicard-members
+        each members
+          +userAvatar(userId=this)
+    .badges
+      if comments.count
+        .badge(title="{{_ 'card-comments-title' comments.count }}")
+          span.badge-icon.fa.fa-comment-o
+          span.badge-text= comments.count
+      if description
+        .badge.badge-state-image-only(title=description)
+          span.badge-icon.fa.fa-align-left
+      if attachments.count
+        .badge
+          span.badge-icon.fa.fa-paperclip
+          span.badge-text= attachments.count

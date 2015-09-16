@@ -1,0 +1,149 @@
+@import 'nib'
+
+#header
+  color: white
+  transition: background-color 0.4s
+  background: #2980B9
+
+  #header-quick-access
+    background-color: rgba(0, 0, 0, 0.2)
+    padding: 0px 10px
+    height: 28px
+    font-size: 12px
+    display: flex
+
+    #header-user-bar,
+    #header-new-board-icon,
+    ul li
+      color: darken(white, 17%)
+
+      .fa
+        color: inherit
+
+      a:hover, a.is-active
+        color: white
+
+    ul
+      transition: opacity 0.2s
+      margin: 4px 0 0 5px
+      overflow: hidden
+
+      li
+        display: block
+        float: left
+        width: auto
+        color: darken(white, 15%)
+        padding: 2px 5px 0
+
+        &.current
+          color: darken(white, 5%)
+
+        &:first-child .fa-home
+          margin-right: 5px
+
+        a.js-create-board
+          margin-left: 5px
+
+    #header-user-bar,
+    #header-new-board-icon
+      flex-shrink: 0
+
+    #header-user-bar
+      margin: 2px 0
+
+      .header-user-bar-avatar
+        float: left
+
+        .member
+          width: 24px
+          height: @width
+          margin: 0
+          margin-top: 1px
+
+      .header-user-bar-name
+        margin: 4px 8px 0 0
+        float: left
+
+        i.fa-chevron-down
+          margin-right: 4px
+
+    #header-new-board-icon
+      flex-grow: 1
+      margin: 6px 5px 0
+      width: 12px
+
+  #header-main-bar
+    height: 28px * 1.618034 - 6px
+    padding: 7px 10px 0
+
+    h1
+      font-size: 20px
+      line-height: 1.7em
+      padding: 0 10px
+      margin: 0
+      margin-right: 10px
+      float: left
+      border-radius: 3px
+
+    .wekan-logo
+      display: block
+      margin: 3px auto 0
+      width: 97px
+      opacity: 0.6
+      transition: opacity 0.15s
+
+      &:hover
+        opacity: 0.9
+
+    .board-header-btns
+      display: block
+      margin-top: 3px
+      width: auto
+
+      // XXX Use a flexbox instead of floats?
+      &.left
+        float: left
+
+      &.right
+        float: right
+
+    .board-header-btn
+      border-radius: 3px
+      color: darken(white, 5%)
+      padding: 0
+      height: 28px
+      font-size: 13px
+      float: left
+      overflow: hidden
+      line-height: @height
+      margin: 0 2px
+
+      i.fa
+        float: left
+        display: block
+        line-height: 28px
+        color: darken(white, 5%)
+        margin: 0 10px
+
+        + span
+          display: inline-block
+          margin-top: 1px
+          margin-right: 10px
+
+      .board-header-btn-close
+        float: right
+
+        i.fa
+          margin: 0 6px
+
+    .board-header-btn,
+    h1.is-clickable
+      &.is-active,
+      &:hover:not(.is-disabled)
+        background: rgba(0, 0, 0, .15)
+
+    .separator
+      margin: 2px 4px
+      border-left: 1px solid rgba(255, 255, 255, .3)
+      height: 24px
+      float: left
