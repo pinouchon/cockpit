@@ -10,6 +10,11 @@ template(name="header")
         #header-quick-access
           ul
             li
+              span='Sync:'
+              a(href="#").syncLists='lists'
+              a(href="#").syncCards='cards'
+              a(href="#").syncGit='git'
+              a(href="#").syncCI='CI'
               a(href="{{pathFor 'home'}}")
                 span.fa.fa-home
                 | {{_ 'all-boards'}}

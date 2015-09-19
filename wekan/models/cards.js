@@ -4,6 +4,24 @@ Cards = new Mongo.Collection('cards');
 // de-normalized number of comments so we don't have to publish the whole list
 // of comments just to display the number of them in the board view.
 Cards.attachSchema(new SimpleSchema({
+  jiraId: {
+    type: String,
+  },
+  jiraBoardType: {
+    type: String,
+  },
+  inDevelop: {
+    type: Boolean,
+  },
+  inStaging: {
+    type: Boolean,
+  },
+  inMaster: {
+    type: Boolean,
+  },
+  buildStatus: {
+    type: String,
+  },
   title: {
     type: String,
   },

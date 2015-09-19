@@ -5,6 +5,23 @@
   align-items: center
   margin-bottom: 9px
 
+  .jira-board-type
+    display: inline;
+    padding: .2em .4em .2em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: #b4b4b4;
+    &.maintenance
+      background-color: #d9534f;
+    &.sprint
+      background-color: #4F7FD9;
+
   &.placeholder
     background: darken(white, 20%)
     border-radius: 2px
@@ -103,6 +120,10 @@
         font-size: 0.9em
         padding-left: 2px
         line-height: 14px
+
+  .custom
+    float: left
+    margin-top: 4px
 
   .minicard-members
     float: right

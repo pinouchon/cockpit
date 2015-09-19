@@ -7,7 +7,10 @@ template(name="minicard")
       .minicard-labels
         each labels
           .minicard-label(class="card-label-{{color}}" title="{{name}}")
-    .minicard-title= title
+    .minicard-title
+      a.jira-board-type(class="{{jiraBoardType}}" href="https://jobteaser.atlassian.net/browse/{{jiraId}}" target="_blank")
+        =jiraId
+      = title
     if members
       .minicard-members.js-minicard-members
         each members
@@ -24,3 +27,15 @@ template(name="minicard")
         .badge
           span.badge-icon.fa.fa-paperclip
           span.badge-text= attachments.count
+
+    .custom
+      if inStaging
+        = 'St'
+      if inDevelop
+        = 'Dev'
+      if inMaster
+        = 'Mst'
+      if buildStatus
+        = 'status:'
+        = buildStatus
+      +pieTimer
